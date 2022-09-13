@@ -1,0 +1,276 @@
+@import url('https://fonts.googleapis.com/css2?family=Domine:wght@400;500;600&family=Josefin+Sans:wght@300;400;500&family=Lexend:wght@200;300;400;500;600;700&family=Poppins:wght@200;300;400;500;600&family=Signika:wght@300;400;500;600;700&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Domine', serif;
+    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Lexend', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Signika', sans-serif;
+}
+
+:root{
+    --pink-red-color: rgba(255, 0, 149, 0.951);
+    --blue-color: rgba(15, 143, 247, 0.814);
+    --white-color: #ffff;
+    --black-color: #1111;
+}
+
+body{
+    /* background-color: var(--pink-red-color); */
+    background-color: #4158D0;
+    background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+
+}
+
+html{
+    font-size: 75.5%;
+}
+
+.header{
+    width: 100%;
+    height: 500px;
+    color: var(--white-color);
+    box-shadow: 0px 8px  40px var(--white-color);
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.header::before{
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(../../public/imagees/book1.jpg);
+    background-position:left;
+    background-size: 750px;
+    background-repeat: no-repeat;
+    clip-path: circle(60% at left 300px);
+    z-index: -1;
+    
+}
+
+.row2{
+    position: absolute;
+    top: 10px;
+    right: 150px;
+    text-align: center;
+}
+
+.row2 h2{
+    font-size: 3rem;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+.row2 img{
+    margin-top: 30px;
+    width: 390px;
+    height: 27rem;
+}
+
+.row1 h1{
+    font-size: 3.4rem;
+    text-align: center;
+    margin-left: 40px;
+    font-family: 'Signika', sans-serif;
+}
+
+.search{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search input{
+    outline: 0;
+    border: 0;
+    width: 350px;
+    height: 40px;
+    padding: 0 2rem;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 30px 0px 0px 30px;
+}
+
+.search button{
+    outline: none;
+    border: none;
+    height: 40px;
+    padding: 0 1rem;
+    background-color: #ffff;
+    border-radius: 0px 30px 30px 0px;
+}
+
+.lupa{
+    color: #418dd0;
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.container{
+    width: 65%;
+    margin: 0 auto;
+    margin-top: 35px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(200px,0.5fr));
+    grid-gap: 20px;
+    box-sizing: border-box;
+}
+
+.card img{
+    width: 100%;
+    height: 230px;
+    border-radius: 1rem 1rem 0 0;
+}
+
+.card{
+    background-color: rgba(255, 255, 255, 0.573);
+    border-radius: 1rem;
+    padding: 0.5rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.479);
+    margin-bottom: 10px;
+    transition: .5s;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+}
+
+.card:hover{
+    transform: scale(0.9);
+    background-color: rgba(255,255,255,0.8);
+}
+
+.card .bottom{
+    display: flex;
+    flex-direction: column;
+}
+
+.card .bottom .title{
+    font-size: 17px;
+    margin-bottom: 40px;
+    font-family: 'Lexend', sans-serif;
+    
+}
+
+.card .bottom .amount{
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    background: #FC5C7D;  
+    background: -webkit-linear-gradient(to right, #6A82FB, #FC5C7D);  
+    background: linear-gradient(to right, #6A82FB, #FC5C7D); 
+
+
+    color: var(--white-color);
+    font-size: 16px;
+    font-weight: 500;
+    padding: 0.5rem;
+    border-radius: 5px;
+}
+
+.overlay{
+    min-height: 100vh;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.1));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.overlay-inner{
+    background: white;
+    width: 700px;
+    height: 550px;
+    padding: 1.5rem;
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
+    font-size: 1.3rem;
+    border-radius: 35px 15px 35px 35px;
+}
+
+.overlay-inner .close{
+    position: absolute;
+    top: 0.4rem;
+    right: 0.4rem;
+    outline: none;
+    border: none;
+    font-size: 20px;
+    background-color: transparent;
+    padding: 10px 10px;
+    transition: 0.5s;
+
+}
+
+.close:hover{
+    background-color: red;
+    color: white;
+    padding: 10px 10px 5px 10px;
+    border-radius: 15px;
+    transition: 0.5s;
+    transform: rotate(20deg);
+    cursor: pointer;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+.overlay-inner .inner-box{
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.overlay-inner .inner-box img{
+    margin-right: 20px;
+    width: 150px;
+    height: 200px;
+}
+
+.overlay-inner .inner-box h3{
+    margin-top: 10px;
+    color: green;
+}
+
+.overlay-inner .inner-box h4{
+    color: blue;
+}
+
+.overlay-inner .inner-box button{
+    outline: none;
+    border: none;
+    width: 100px;
+    border-radius: 5px;
+    background: #FC5C7D;  
+    background: -webkit-linear-gradient(to right, #6A82FB, #FC5C7D);  
+    background: linear-gradient(to right, #6A82FB, #FC5C7D); 
+    color: white;
+    font-weight: 500;
+    padding: 0.6rem 0.7rem;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.5s;
+
+}
+
+.inner-box button:hover{
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;    transition: 0.5s;
+}
+
+.overlay-inner .description{
+    margin-top: 2rem;
+    text-align: justify;
+    font-size: 16px;
+    margin-bottom: 1rem;
+
+}
